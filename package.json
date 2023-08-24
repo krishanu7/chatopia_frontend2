@@ -44,5 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8000/api"
+  "proxy": "https://backend-2-7y86.onrender.com/api"
 }
