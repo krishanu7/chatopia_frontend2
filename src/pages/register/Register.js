@@ -21,7 +21,7 @@ const Register = () => {
             password: password.current.value,
           };
           try {
-            await axios.post(`${process.env.BASE_URL}/api/auth/register`, user);
+            await axios.post("https://backend-2-4720.onrender.com/api/auth/register", user)
             navigate("/login"); 
           } catch (err) {
             console.log(err);
