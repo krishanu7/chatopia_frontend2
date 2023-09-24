@@ -20,7 +20,7 @@ const Messenger = () => {
   const socket = useRef();
 
   useEffect(() => {
-    socket.current = io("ws://localhost:8900");
+    socket.current = io("wss://chatopia-backend.onrender.com");
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         senderId: data.senderId,
@@ -29,6 +29,7 @@ const Messenger = () => {
       });
     });
   }, []);
+  
 
   useEffect(() => {
     arrivalMessage &&
