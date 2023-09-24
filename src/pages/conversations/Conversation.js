@@ -12,7 +12,7 @@ export default function Conversation({ conversation, currentUser }) {
 
     const getUser = async () => {
       try {
-        const res = await axios("/users?userId=" + friendId);
+        const res = await axios("https://backend-2-4720.onrender.com/api/users?userId=" + friendId);
         setUser(res.data);
       } catch (err) {
         console.log(err);

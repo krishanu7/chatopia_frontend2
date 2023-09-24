@@ -10,7 +10,7 @@ const ChatOnline = ({ onlineUsers, currentId, setCurrentChat }) => {
   useEffect(() => {
     const getFriends = async () => {
       try {
-        const res = await axios.get("/users/" + currentId);
+        const res = await axios.get("https://backend-2-4720.onrender.com/api/users/" + currentId);
         setFriends(res.data);
       } catch (error) {
         console.log("Error fetching friends: ", error);
@@ -47,13 +47,13 @@ const ChatOnline = ({ onlineUsers, currentId, setCurrentChat }) => {
   const handleClick = async (user) => {
     try {
       const existingConversation = await axios.get(
-        `/conversations/find/${currentId}/${user.userId}`
+        `https://backend-2-4720.onrender.com/api/conversations/find/${currentId}/${user.userId}`
       );
 
       if (existingConversation.data) {
         setCurrentChat(existingConversation.data);
       } else {
-        const newConversation = await axios.post("/conversations", {
+        const newConversation = await axios.post("https://backend-2-4720.onrender.com/api/conversations", {
           senderId: currentId,
           receiverId: user.userId,
         });
