@@ -1,1 +1,1 @@
-export const URL = "http://localhost:8000";
+export const URL = "https://chatopia-backend.onrender.com";
