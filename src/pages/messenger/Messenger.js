@@ -21,7 +21,7 @@ const Messenger = () => {
   const socket = useRef();
 
   useEffect(() => {
-    socket.current = io("ws://localhost:8900");
+    socket.current = io("wss://chatopia-socket.onrender.com");
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         senderId: data.senderId,
